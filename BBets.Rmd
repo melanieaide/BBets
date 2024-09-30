@@ -161,6 +161,7 @@ cat("probability of win =", mean(probs))
 
 Number of fair students for fair games 1:1 is 23
 
+
 ### Explanation:
 
 - **`same_birthday_prob` function**: Simulates whether at least two people in a group of `class_size` share a birthday, repeated `n_sim` times. It returns the proportion of simulations where a birthday match occurs.
