@@ -1,6 +1,6 @@
 ---
 title: "BBets"
-author: "Your Name Here"
+author: "Melanie Vera"
 output: html_document
 date: "2024-09-27"
 ---
@@ -60,10 +60,9 @@ probs <- numeric(n_trials)
 for (i in 1:n_trials) {
   probs[i] <- same_birthday_prob(class_size, n_sim)
 }
-
 ```
 
-## mean and std dev 
+## mean and std dev
 
 ```{r, echo=F}
 # Print mean, std of probabilities
@@ -76,10 +75,21 @@ cat("Standard Deviation of Probabilities:", sd_probs, "\n")
 
 ```
 
+The probability Dr.J wins is 0.813
+
+```{r}
+EV= mean_probs*1*26
+cat("expected profit = " ,EV)
+
+correctbet = mean_probs/(1-mean_probs)
+cat("correct bet = ", correctbet)
+```
+
 ```{r}
 hist(probs, main = "Histogram of Probabilities", xlab = "Probability", col = "lightblue", border = "black")
-
 ```
+
+get answers for a smaller class
 
 ```{r}
 # Calculate 95% confidence interval
@@ -90,8 +100,8 @@ cat("95% Confidence Interval for the Mean Probability: [", conf_interval[1], ","
 
 ```
 
+confidence interval is 0.811 to 0.816
 
-get answers for a smaller class
 
 ```{r}
 # Simulation settings
@@ -107,9 +117,17 @@ for (i in 1:n_trials) {
   probs[i] <- same_birthday_prob(class_size, n_sim)
 }
 
+cat("probability of win =", mean(probs))
+
 ```
 
-## mean and std dev 
+```{r}
+EV=mean(probs)*1*20
+cat("expected profit = " , EV)
+```
+
+
+## mean and std dev
 
 ```{r echo=F}
 # Print mean, std of probabilities
@@ -123,6 +141,25 @@ cat("Standard Deviation of Probabilities:", sd_probs, "\n")
 ```
 
 
+```{r}
+# Simulation settings
+class_size <- 23
+n_sim <- 1000
+n_trials <- 100
+
+# Vector to store the probabilities from each trial
+probs <- numeric(n_trials)
+
+# Run the simulation 100 times
+for (i in 1:n_trials) {
+  probs[i] <- same_birthday_prob(class_size, n_sim)
+}
+
+cat("probability of win =", mean(probs))
+
+```
+
+Number of fair students for fair games 1:1 is 23
 
 ### Explanation:
 
