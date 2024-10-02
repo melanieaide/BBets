@@ -159,7 +159,7 @@ cat("probability of win =", mean(probs))
 
 ```
 
-Number of fair students for fair games 1:1 is 23
+The number of students for the game to be 1:1. Meaning that there would have to be 23 in order for the bet to be fair.
 
 
 ### Explanation:
